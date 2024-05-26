@@ -14,7 +14,7 @@ module.exports = createCoreController('api::basket.basket', ({ strapi }) => ({
       return ctx.badRequest('Email is required');
     }
 
-    const basket = await strapi.db.query('api::basket.basket').findOne({
+    const basket = await strapi.db.query('api::basket.basket').findMany({
       where: { email: email },
     });
 
